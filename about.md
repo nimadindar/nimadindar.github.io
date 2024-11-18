@@ -4,42 +4,36 @@ layout: page
 ---
 ![Profile Image]({% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %})
 
-<p>Lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Hello! I'm Nima Dindar Safa, a passionate data scientist and programmer with a strong background in physics and artificial intelligence. I am currently pursuing my M.Sc. in Data Science and AI at Universität des Saarlandes, where I focus on neural network theory, machine learning, and statistical analysis.</p>
+
+<p>My professional journey has included roles such as a Business Data Analyst, where I honed my skills in data visualization and trend analysis, and as a Programmer applying image processing for machine learning. My work extends to academia as a teaching assistant, sharing knowledge in Python programming.</p>
+
+<p>Beyond structured work, I am deeply engaged in research, with publications exploring deep learning applications in structural collapse prediction and offshore platform damage evaluation. Personal projects, such as a Telegram bot for market data and portfolio creation, reflect my enthusiasm for blending data, automation, and user-centric solutions.</p>
+
+<p>Technical proficiencies include Python, TensorFlow, Power BI, and more. I'm always eager to collaborate, innovate, and turn data-driven insights into impactful solutions.</p>
+
+<p>Connect with me to explore my repositories or discuss exciting new projects!</p>
 
 <h2>Skills</h2>
 
 <ul class="skill-list">
-	<li>HTML - Jade - Haml - Erb</li>
-	<li>Responsive (Mobile First)</li>
-	<li>CSS (Stylus, Sass, Less)</li>
-	<li>Css Frameworks (Bootstrap, Foundation)</li>
-	<li>Javascript (Design Patterns, Tests)</li>
-	<li>AngularJS - ReactJS</li>
-	<li>Grunt - Gulp - Yeoman</li>
-	<li>Git</li>
-	<li>PHP</li>
 	<li>Python</li>
-	<li>MySQL - MongoDB</li>
-	<li>Scrum and Kanban</li>
-	<li>TDD e Continuous Integration</li>
+	<li>PyTorch - Tensorflow</li>
+	<li>Numpy - SciPy - Sklearn - MatplotLib</li>
+	<li>OpenCV</li>
+	<li>R</li>
+	<li>C++</li>
+	<li>Power BI - Excel</li>
+	<li>MS Azure</li>
+	<li>Git</li>
+	<li>SQL Server - MongoDB</li>
 </ul>
 
 <h2>Projects</h2>
 
 <ul>
-	<li><a href="https://github.com/">Lorem Lorem</a></li>
-	<li><a href="https://github.com/">Ipsum Dolor</a></li>
-	<li><a href="https://github.com/">Dolor Lorem</a></li>
+	<li>Telgram bot for Receiving financial data of markets and creating portfolio</li>
+	<li>Implementation of a Neural Network Analysis in Python to Detect Bias in the Training Phase</li>
+	<li>Simulation of the chaotic behavior of a magnetic pendulum in the magnetic field of an arbitrary number of magnets</li>
 </ul>

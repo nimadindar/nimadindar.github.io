@@ -1,6 +1,6 @@
 # main text of home
 title: Nima DindarSafa
-bio: A Person who travels the world eating noodles
+bio: I am M.Sc. data science and AI student at Saarland university and a business enthusiast 
 
 # twitter summary info
 description: A blog about technology and stuff related
@@ -20,7 +20,7 @@ resume: true
 resume-external: true
 resume-url: https://google.com/?q=my+resume
 
-url: https://sergiokopplin.github.io/indigo
+url: https://nimadindar.github.io/
 # your url: https://USERNAME.github.io
 
 permalink: /:title/
@@ -39,21 +39,15 @@ twitter: mytwitter
 instagram: myinstagram
 linkedin: mylinkedin
 github: mygithub
-email: myemail@gmail.com
+email: nima.dindarsafa@gmail.com
 
 authors:
-  johndoe:
-    name: John Doe
-    bio: A Man who travels the world eating noodles
+  nimadindar:
+    name: Nima DindarSafa
+    bio: I am M.Sc. data science and AI student at Saarland university and a business enthusiast
     external-image: false
     picture: assets/images/profile.jpg
     twitter: johndoe
-  jamesfoster:
-    name: James Foster
-    bio: A Man who develops software with coffee
-    external-image: false
-    picture: assets/images/james.jpg
-    twitter: jamesfoster
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal

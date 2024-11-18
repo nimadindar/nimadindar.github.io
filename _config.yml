@@ -18,7 +18,7 @@ dark-theme: auto
 # and specify source (external or local).
 resume: true
 resume-external: true
-resume-url: https://google.com/?q=my+resume
+resume-url: https://drive.google.com/file/d/18KM0NNWtruKn_xqeHSH4ctOZMLqBl8VN/view?usp=sharing
 
 url: https://nimadindar.github.io/
 # your url: https://USERNAME.github.io
@@ -34,11 +34,11 @@ disqus:
   categories: [blog, project] # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
-facebook: myfacebook
-twitter: mytwitter
-instagram: myinstagram
-linkedin: mylinkedin
-github: mygithub
+# facebook: myfacebook
+# twitter: mytwitter
+instagram: nima__dindarsafa
+linkedin: nima-dindar-safa
+github: nimadindar
 email: nima.dindarsafa@gmail.com
 
 authors:
@@ -47,7 +47,7 @@ authors:
     bio: I am M.Sc. data science and AI student at Saarland university and a business enthusiast
     external-image: false
     picture: assets/images/profile.jpg
-    twitter: johndoe
+    # twitter: johndoe
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal

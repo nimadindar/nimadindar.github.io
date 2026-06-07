@@ -1,0 +1,110 @@
+:root {
+  --text-color: #222;
+  --muted-color: #666;
+  --link-color: #1a5fb4;
+  --border-color: #e5e5e5;
+  --max-width: 720px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #ffffff;
+  color: var(--text-color);
+  font-family: "Georgia", "Iowan Old Style", "Palatino Linotype", serif;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header & navigation */
+
+.site-header {
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem 0;
+}
+
+.site-header .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.site-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.site-nav a {
+  margin-left: 1.25rem;
+  color: var(--muted-color);
+}
+
+.site-nav a:first-child {
+  margin-left: 0;
+}
+
+.site-nav a.active,
+.site-nav a:hover {
+  color: var(--text-color);
+}
+
+/* Main content */
+
+main {
+  padding: 2.5rem 1.25rem;
+  min-height: 60vh;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+}
+
+.entry {
+  margin-top: 2rem;
+}
+
+.entry-meta {
+  color: var(--muted-color);
+  font-size: 0.95rem;
+  margin-top: 0;
+}
+
+/* Footer */
+
+.site-footer {
+  border-top: 1px solid var(--border-color);
+  padding: 1.5rem 0;
+  color: var(--muted-color);
+  font-size: 0.9rem;
+}

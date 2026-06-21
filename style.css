@@ -110,7 +110,7 @@ h1, h2, h3 {
 /* Main content */
 
 main {
-  padding: 4rem 1.5rem 10rem;
+  padding: 2.5rem 1.5rem 6rem;
   min-height: 60vh;
 }
 
@@ -123,11 +123,11 @@ h1 {
 }
 
 section + section {
-  margin-top: 5rem;
+  margin-top: 3.5rem;
 }
 
 h2 {
-  font-size: 1.35rem;
+  font-size: 1.6rem;
   margin: 0 0 0.3rem;
 }
 
@@ -224,8 +224,8 @@ h3 {
 /* Entries (Research / Resume) */
 
 .entry {
-  margin-top: 2.5rem;
-  padding-top: 2.5rem;
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
   border-top: 1px solid var(--border-color);
 }
 
@@ -236,7 +236,7 @@ h3 {
 }
 
 .entry + h2 {
-  margin-top: 3.5rem;
+  margin-top: 2.5rem;
 }
 
 .entry-meta {
@@ -261,7 +261,8 @@ h3 {
   flex-shrink: 0;
 }
 
-.teaching-body h2 {
+.teaching-body h2,
+.teaching-body h3 {
   font-size: 1.2rem;
   margin: 0 0 0.2rem;
 }

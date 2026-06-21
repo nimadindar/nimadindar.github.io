@@ -15,7 +15,7 @@ function fill(data) {
   const data = await load(`content/${page}.json`);
   fill(data);
 
-  if (page === 'about' || page === 'research') {
+  if (page === 'about' || page === 'research' || page === 'resume') {
     const pubs = await load('content/publications.json');
     fill(pubs);
   }

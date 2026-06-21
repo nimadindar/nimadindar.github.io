@@ -366,24 +366,87 @@ h3 {
   font-weight: bold;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
+  body {
+    font-size: 16px;
+  }
+
+  /* Header */
+  .site-header {
+    padding: 1.1rem 0;
+  }
+
+  .site-nav a {
+    margin-left: 1rem;
+    font-size: 0.88rem;
+  }
+
+  /* Main content */
+  main {
+    padding: 2.5rem 1.25rem 6rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  section + section {
+    margin-top: 3rem;
+  }
+
+  .entry + h2 {
+    margin-top: 2rem;
+  }
+
+  /* About page: stack profile panel above content */
+  .page-layout {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .profile-panel {
+    position: static;
+    width: 100%;
+    padding-top: 0;
+  }
+
+  /* Teaching / Resume entries */
+  .teaching-entry {
+    gap: 1rem;
+  }
+
+  .teaching-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  /* Publication cards */
   .pub-card {
     flex-direction: column;
+    padding: 1.25rem;
+    gap: 1rem;
   }
 
   .pub-thumb {
     width: 100%;
     height: auto;
-    max-height: 200px;
+    max-height: 180px;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-nav a {
+    margin-left: 0.65rem;
+    font-size: 0.82rem;
   }
 
-  .page-layout {
-    flex-direction: column;
+  h1 {
+    font-size: 1.5rem;
   }
 
-  .profile-panel {
-    position: static;
-    width: auto;
+  .teaching-logo {
+    width: 40px;
+    height: 40px;
   }
 }
 

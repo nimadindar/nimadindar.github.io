@@ -270,6 +270,37 @@ h3 {
   margin: 0;
 }
 
+.tutorial-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.tutorial-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--muted-color);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.tutorial-links a:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+  text-decoration: none;
+}
+
+.tutorial-links svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  flex-shrink: 0;
+}
+
 .teaching-body p:not(.entry-meta) {
   margin: 0.4rem 0 0;
 }

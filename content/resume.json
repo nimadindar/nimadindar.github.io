@@ -1,7 +1,7 @@
 {
-  "exp.cispa.description": "Conducting research on trustworthy machine learning and AI security. Implemented the backend API for the CISPA European Championship Hackathon.",
-  "exp.dfki.description": "Worked as a research assistant at the German Research Center for Artificial Intelligence (DFKI), contributing to applied AI research projects.",
-  "exp.binasanat.description": "Led research and development initiatives, contributing to technical innovation and product development projects.",
-  "exp.sehat.description": "Analyzed business and health data to support operational decision-making and performance improvements.",
-  "project.hackathon.description": "Implemented the backend for the CISPA European Championship Hackathon API."
+  "exp.cispa.description": "As a Research Assistant at CISPA, I conduct research on data provenance in generative AI, focusing on Large Language Models (LLMs). Specifically, I investigate methods for identifying and attributing pretraining data within these models.",
+  "exp.dfki.description": "As a Research Assistant at DFKI, I worked on physics-informed neural networks and numerical methods for solving partial differential equations. My research focused on integrating physical principles into machine learning models, as well as developing and evaluating computational techniques for efficiently solving complex PDEs.",
+  "exp.binasanat.description": "As a member of the Research and Development team at Bina Sanaat Veera, I worked on developing computer vision–based solutions for the pharmaceutical industry. My responsibilities included designing image processing techniques for automated inspection and quality control, helping improve the accuracy and efficiency of pharmaceutical manufacturing workflows.",
+  "exp.sehat.description": "At Sehat Sanjesh Aria, I was responsible for analyzing financial and operational data, developing interactive dashboards, and generating insights to support strategic decision-making. My work involved transforming complex datasets into clear visualizations and actionable reports for stakeholders.",
+  "project.hackathon.description": "Developed and maintained the backend API for CISPA’s European Championship Hackathon submission platform, supporting hundreds of participants. Designed for reliability and scalability, resulting in less than one minute of downtime throughout the event."
 }

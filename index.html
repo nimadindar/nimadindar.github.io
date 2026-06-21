@@ -6,7 +6,7 @@
   <title>Nima Dindarsafa</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="about">
   <header class="site-header">
     <div class="container">
       <a class="site-title" href="index.html">Nima Dindarsafa</a>
@@ -49,37 +49,10 @@
         <section id="about">
           <h1>About me</h1>
           <div class="about-text">
-            <p>
-              I am Nima Dindarsafa, currently pursuing a Master's degree in
-              Data Science and Artificial Intelligence at Saarland University.
-              I am also a Research Assistant at the CISPA Helmholtz Center for
-              Information Security in Saarbr&uuml;cken, Germany. Prior to this,
-              I completed my Bachelor's degree in Physics at the University of
-              Tehran in Tehran, Iran.
-            </p>
-            <p>
-              My research interests center on making artificial intelligence
-              systems safer, more secure, and more reliable. During my
-              Master's studies, my research has focused on identifying
-              datasets used to train large language models, as well as
-              developing fairer methods for assessing the capabilities of
-              these models. I am particularly interested in applying
-              statistical methods to machine learning problems and designing
-              approaches that provide provable guarantees grounded in
-              statistical theory.
-            </p>
-            <p>
-              During my Bachelor's studies, I was also interested in the
-              intersection of machine learning methods and quantum computing.
-              My Bachelor's thesis explored the application of Boltzmann
-              Machines to boson sampling, reflecting my broader interest in
-              combining ideas from physics, computation, and learning theory.
-            </p>
-            <p>
-              In addition, I have a strong interest in mathematics, especially
-              optimization methods in neural networks and their role in
-              improving the behavior and performance of modern AI systems.
-            </p>
+            <p data-key="bio.0"></p>
+            <p data-key="bio.1"></p>
+            <p data-key="bio.2"></p>
+            <p data-key="bio.3"></p>
           </div>
         </section>
 
@@ -92,16 +65,7 @@
               <h2 class="pub-title">Practical Identification of Training Datasets in Large Language Models</h2>
               <p class="pub-authors">Nima Dindarsafa, Bihe Zhao, Piotr Trzaskowski, Filip Szympliński, Krzysztof Wodnicki, Franziska Boenisch, Adam Dziedzic</p>
               <p class="pub-venue">Under Review &middot; NeurIPS 2026</p>
-              <p class="pub-description">
-                This research aims to develop a practical black-box Dataset Inference method
-                for determining whether an LLM was trained on a suspect dataset by estimating
-                per-token probabilities from label-only generated outputs, avoiding the need
-                for gray-box probability access. It also replaces rigid p-value testing with
-                e-value&ndash;based sequential testing, enabling anytime-valid and adaptive
-                evidence accumulation as more samples are queried. Together, these
-                methodological advances allow dataset inference to be applied to real-world
-                LLM APIs under fully black-box access.
-              </p>
+              <p class="pub-description" data-key="pub.dice.description"></p>
               <a class="pub-link" href="https://openreview.net/forum?id=e6UZMoywyF">Read the paper &rarr;</a>
             </div>
           </article>
@@ -112,18 +76,7 @@
               <h2 class="pub-title">A 1D-CNN deep learning framework for seismic collapse prediction of jacket offshore platforms with Bayesian neural architecture search</h2>
               <p class="pub-authors">Mohammad Zarrin, Liborio Cavaleri, Amirhosein Rezaei, Nima Dindarsafa</p>
               <p class="pub-venue">Ocean Engineering Journal &middot; 2026</p>
-              <p class="pub-description">
-                This study proposes a methodology for seismic limit-state and collapse
-                prediction of Jacket Type Offshore Platforms using a 1D-CNN trained directly
-                on earthquake accelerogram time-series data. The study develops a systematic
-                model-selection framework based on Bayesian optimization to tune the neural
-                architecture and hyperparameters, reducing reliance on manual trial-and-error.
-                It further uses nested cross-validation for unbiased performance evaluation
-                and introduces a stochastic optimization approach for stratified K-fold
-                dataset preparation based on incremental dynamic analysis. The optimized
-                1D-CNN framework is compared with tuned MLP and SVM models and applied to
-                estimate collapse fragility curves for a case-study offshore platform.
-              </p>
+              <p class="pub-description" data-key="pub.1dcnn.description"></p>
               <a class="pub-link" href="https://www.sciencedirect.com/science/article/abs/pii/S0029801826004592">Read the paper &rarr;</a>
             </div>
           </article>
@@ -137,5 +90,6 @@
       <p>&copy; 2026 Nima Dindarsafa</p>
     </div>
   </footer>
+  <script src="js/content.js"></script>
 </body>
 </html>

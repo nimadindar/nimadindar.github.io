@@ -1,0 +1,5 @@
+{
+  "intro.0": "My research focuses on improving the safety, security, and reliability of artificial intelligence systems. In my Master's work, I study how to identify datasets used in the training of large language models and develop fairer methods for evaluating their capabilities. I am especially interested in applying statistical techniques to machine learning problems and creating methods with provable guarantees based on statistical theory.",
+  "intro.1": "My earlier research also explored the connection between machine learning and quantum computing. In my Bachelor's thesis, I investigated the use of Boltzmann Machines for boson sampling, combining ideas from physics, computation, and learning theory.",
+  "intro.2": "More broadly, I am interested in mathematical approaches to AI, particularly optimization methods in neural networks and how they can improve the behavior and performance of modern AI systems."
+}

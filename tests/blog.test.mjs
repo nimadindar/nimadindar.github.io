@@ -19,11 +19,13 @@ test('validates metadata and calendar dates with clear errors', () => {
 test('publishes Markdown, sorts posts, escapes metadata, and removes withdrawn posts', async () => {
   const root = await mkdtemp(join(tmpdir(), 'nima-blog-test-'));
   try {
-    for (const path of ['_templates', '_writing', 'content', 'index.html', 'research.html', 'resume.html', 'style.css']) {
+    for (const path of ['_templates', '_writing', 'content', 'images', 'index.html', 'research.html', 'resume.html', 'style.css']) {
       await cp(resolve(path), join(root, path), { recursive: true });
     }
     assert.equal(await build(root), 0);
     assert.match(await readFile(join(root, 'blog.html'), 'utf8'), /Nothing here just yet/);
+    const photoVersion = html => html.match(/images\/profile\.jpg\?v=([a-f0-9]{12})/)[1];
+    const originalPhotoVersion = photoVersion(await readFile(join(root, 'index.html'), 'utf8'));
     await writeFile(join(root, '_writing/older.md'), post('Older', '2025-01-01'));
     await writeFile(join(root, '_writing/newer.md'), post('Newer <ideas> & "notes"', '2026-10-03', false, '## An idea\n\nA **useful** note.\n\n```js\nconst value = 1;\n```\n\n| A | B |\n| - | - |\n| 1 | 2 |'));
     await writeFile(join(root, '_writing/draft.md'), post('Draft', '2026-10-04', true));
@@ -47,6 +49,7 @@ test('publishes Markdown, sorts posts, escapes metadata, and removes withdrawn p
     for (const file of renderedPages) {
       assert.equal(version(await readFile(join(root, file), 'utf8')), originalVersion);
     }
+    assert.equal(photoVersion(await readFile(join(root, 'index.html'), 'utf8')), originalPhotoVersion);
     // Editing CSS updates the URLs on both existing pages and generated articles.
     await writeFile(join(root, 'style.css'), 'body { color: #123456; }');
     await build(root);
@@ -55,8 +58,16 @@ test('publishes Markdown, sorts posts, escapes metadata, and removes withdrawn p
     for (const file of renderedPages) {
       const html = await readFile(join(root, file), 'utf8');
       assert.equal(version(html), updatedVersion);
-      assert.equal((html.match(/\?v=/g) || []).length, 1);
+      assert.equal((html.match(/style\.css\?v=/g) || []).length, 1);
     }
+    // Replacing the photo changes only its version, independently of CSS changes.
+    assert.equal(photoVersion(await readFile(join(root, 'index.html'), 'utf8')), originalPhotoVersion);
+    await writeFile(join(root, 'images/profile.jpg'), 'replacement photo bytes');
+    await build(root);
+    const updatedHome = await readFile(join(root, 'index.html'), 'utf8');
+    assert.notEqual(photoVersion(updatedHome), originalPhotoVersion);
+    assert.equal(version(updatedHome), updatedVersion);
+    assert.equal((updatedHome.match(/profile\.jpg\?v=/g) || []).length, 1);
     // Hand-authored pages are preserved when generated posts are removed.
     await writeFile(join(root, 'blog/manual.html'), '<p>Keep me.</p>');
     await writeFile(join(root, '_writing/newer.md'), post('Now a draft', '2026-10-03', true));

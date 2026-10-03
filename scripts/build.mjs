@@ -37,6 +37,8 @@ export async function build(root = ROOT) {
   // A changed stylesheet gets a new URL, avoiding old CSS with newly deployed HTML.
   const stylesheet = await readFile(resolve(root, 'style.css'));
   const styleVersion = createHash('sha256').update(stylesheet).digest('hex').slice(0, 12);
+  const profilePhoto = await readFile(resolve(root, 'images/profile.jpg'));
+  const profileVersion = createHash('sha256').update(profilePhoto).digest('hex').slice(0, 12);
   const postDir = resolve(root, '_writing');
   const filenames = (await readdir(postDir)).filter(name => name.endsWith('.md')).sort();
   // Validate every post before changing any output. Drafts never produce article pages.
@@ -72,7 +74,9 @@ export async function build(root = ROOT) {
       if (!(key in data)) throw new Error(`${file}: missing content key ${key}`);
       return start + escapeHTML(data[key]) + end;
     });
-    return [file, rendered.replace(/href="style\.css(?:\?v=[^"]*)?"/g, `href="style.css?v=${styleVersion}"`)];
+    return [file, rendered
+      .replace(/href="style\.css(?:\?v=[^"]*)?"/g, `href="style.css?v=${styleVersion}"`)
+      .replace(/src="images\/profile\.jpg(?:\?v=[^"]*)?"/g, `src="images/profile.jpg?v=${profileVersion}"`)];
   }));
   const outputDir = resolve(root, 'blog');
   await mkdir(outputDir, { recursive: true });

@@ -1,6 +1,7 @@
 import { readdir, readFile, writeFile, mkdir, unlink } from 'node:fs/promises';
 import { resolve, dirname, basename } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { createHash } from 'node:crypto';
 import { marked } from 'marked';
 import { parse } from 'yaml';
 
@@ -33,6 +34,9 @@ export function parsePost(source, filename) {
 }
 
 export async function build(root = ROOT) {
+  // A changed stylesheet gets a new URL, avoiding old CSS with newly deployed HTML.
+  const stylesheet = await readFile(resolve(root, 'style.css'));
+  const styleVersion = createHash('sha256').update(stylesheet).digest('hex').slice(0, 12);
   const postDir = resolve(root, '_writing');
   const filenames = (await readdir(postDir)).filter(name => name.endsWith('.md')).sort();
   // Validate every post before changing any output. Drafts never produce article pages.
@@ -54,7 +58,7 @@ export async function build(root = ROOT) {
       </li>`).join('')}\n    </ol>` : emptyState;
   const outputs = new Map(posts.map(post => [`${post.slug}.html`, `${GENERATED}\n${template(postTemplate, {
     title: escapeHTML(post.title), description: escapeHTML(post.summary), date: post.date,
-    displayDate: displayDate(post.date), readingTime: post.readingTime,
+    displayDate: displayDate(post.date), readingTime: post.readingTime, styleVersion,
     // Markdown is authored by the site owner; raw HTML is supported intentionally.
     body: marked.parse(post.body),
   })}`]));
@@ -68,7 +72,7 @@ export async function build(root = ROOT) {
       if (!(key in data)) throw new Error(`${file}: missing content key ${key}`);
       return start + escapeHTML(data[key]) + end;
     });
-    return [file, rendered];
+    return [file, rendered.replace(/href="style\.css(?:\?v=[^"]*)?"/g, `href="style.css?v=${styleVersion}"`)];
   }));
   const outputDir = resolve(root, 'blog');
   await mkdir(outputDir, { recursive: true });
@@ -85,7 +89,7 @@ export async function build(root = ROOT) {
     if (existing !== null && !existing.startsWith(GENERATED)) throw new Error(`Refusing to overwrite hand-written page: ${path}`);
     await writeFile(path, html);
   }
-  await writeFile(resolve(root, 'blog.html'), `${GENERATED}\n${template(indexTemplate, { title: 'Blog', description: 'Research notes, ideas, and things I learn along the way. A blog by Nima Dindarsafa.', posts: list })}`);
+  await writeFile(resolve(root, 'blog.html'), `${GENERATED}\n${template(indexTemplate, { title: 'Blog', description: 'Research notes, ideas, and things I learn along the way. A blog by Nima Dindarsafa.', posts: list, styleVersion })}`);
   for (const [filename, html] of pages) await writeFile(resolve(root, filename), html);
   return posts.length;
 }

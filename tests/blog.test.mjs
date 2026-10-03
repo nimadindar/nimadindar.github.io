@@ -19,7 +19,7 @@ test('validates metadata and calendar dates with clear errors', () => {
 test('publishes Markdown, sorts posts, escapes metadata, and removes withdrawn posts', async () => {
   const root = await mkdtemp(join(tmpdir(), 'nima-blog-test-'));
   try {
-    for (const path of ['_templates', '_writing', 'content', 'index.html', 'research.html', 'resume.html']) {
+    for (const path of ['_templates', '_writing', 'content', 'index.html', 'research.html', 'resume.html', 'style.css']) {
       await cp(resolve(path), join(root, path), { recursive: true });
     }
     assert.equal(await build(root), 0);
@@ -37,8 +37,26 @@ test('publishes Markdown, sorts posts, escapes metadata, and removes withdrawn p
     assert.match(article, /<strong>useful<\/strong>/);
     assert.match(article, /<table>/);
     assert.match(article, /<code class="language-js">/);
-    assert.match(article, /href="..\/style.css"/);
+    assert.match(article, /href="..\/style\.css\?v=[a-f0-9]{12}"/);
     assert.match(article, /datetime="2026-10-03"/);
+    // Every page uses the same cache version; rebuilding alone leaves it stable.
+    const version = html => html.match(/style\.css\?v=([a-f0-9]{12})/)[1];
+    const originalVersion = version(article);
+    await build(root);
+    const renderedPages = ['index.html', 'research.html', 'resume.html', 'blog.html', 'blog/newer.html'];
+    for (const file of renderedPages) {
+      assert.equal(version(await readFile(join(root, file), 'utf8')), originalVersion);
+    }
+    // Editing CSS updates the URLs on both existing pages and generated articles.
+    await writeFile(join(root, 'style.css'), 'body { color: #123456; }');
+    await build(root);
+    const updatedVersion = version(await readFile(join(root, 'index.html'), 'utf8'));
+    assert.notEqual(updatedVersion, originalVersion);
+    for (const file of renderedPages) {
+      const html = await readFile(join(root, file), 'utf8');
+      assert.equal(version(html), updatedVersion);
+      assert.equal((html.match(/\?v=/g) || []).length, 1);
+    }
     // Hand-authored pages are preserved when generated posts are removed.
     await writeFile(join(root, 'blog/manual.html'), '<p>Keep me.</p>');
     await writeFile(join(root, '_writing/newer.md'), post('Now a draft', '2026-10-03', true));

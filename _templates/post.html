@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}} — Nima Dindarsafa</title>
+  <meta name="description" content="{{description}}">
+  <meta name="theme-color" content="#fafaf6">
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body data-page="blog">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../index.html">Nima Dindarsafa</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="../index.html">About</a>
+        <a href="../research.html">Research</a>
+        <a href="../resume.html">Resume</a>
+        <a href="../blog.html" aria-current="page">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="main">
+    <article class="post">
+      <header class="post-header">
+        <a class="text-link" href="../blog.html">← All posts</a>
+        <p class="eyebrow">Notes &amp; ideas</p>
+        <h1>{{title}}</h1>
+        <p class="post-meta"><time datetime="{{date}}">{{displayDate}}</time> · {{readingTime}} min read</p>
+      </header>
+      <div class="post-body">
+        {{body}}
+      </div>
+      <footer class="post-end"><a class="text-link" href="../blog.html">← Back to the blog</a></footer>
+    </article>
+  </main>
+
+  <div class="site-footer" aria-hidden="true">
+    <div class="container"></div>
+  </div>
+</body>
+</html>

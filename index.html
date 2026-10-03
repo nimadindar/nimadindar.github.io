@@ -4,26 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nima Dindarsafa</title>
+  <meta name="description" content="Research in trustworthy machine learning, AI safety, and data provenance. Nima Dindarsafa at the Max Planck Institute for Informatics and Saarland University.">
+  <meta name="theme-color" content="#fafaf6">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-page="about">
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container">
       <a class="site-title" href="index.html">Nima Dindarsafa</a>
-      <nav class="site-nav">
-        <a href="index.html">About</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">About</a>
         <a href="research.html">Research</a>
         <a href="resume.html">Resume</a>
+        <a href="blog.html">Blog</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
+  <main class="container" id="main">
     <div class="page-layout">
       <aside class="profile-panel">
-        <img class="profile-photo" src="images/profile.jpg" alt="Photo of Nima Dindarsafa">
-        <h2 class="profile-name">Nima Dindarsafa</h2>
+        <img width="280" height="280" fetchpriority="high" class="profile-photo" src="images/profile.jpg" alt="Photo of Nima Dindarsafa">
+        <p class="profile-name">Nima Dindarsafa</p>
         <p class="profile-tagline">Trustworthy ML Researcher</p>
+        <p class="profile-affiliation">MPI Informatics · Saarland University<br>Saarbrücken, Germany</p>
         <div class="profile-social">
           <a href="mailto:nima.dindarsafa@cispa.de" aria-label="Email Nima Dindarsafa">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -48,47 +54,55 @@
         <section id="about">
           <h1>About me</h1>
           <div class="about-text">
-            <p data-key="bio.0"></p>
-            <p data-key="bio.1"></p>
-            <p data-key="bio.2"></p>
-            <p data-key="bio.3"></p>
+            <p data-key="bio.0">Hi there! I am Nima, currently pursuing a Master&#39;s degree in Data Science and Artificial Intelligence at Saarland University. I am also a Research Assistant at the Max Planck Institute for Informatics. Prior to this, I completed my Bachelor&#39;s degree in Physics.</p>
+            <p data-key="bio.1">My most recent research focuses on inherently interpretable neural networks. Previously, I have done research on identifying datasets used to train large language models, as well as developing fairer methods for assessing the capabilities of these models. My main research interest focuses on explaining neural networks specifically, vision language models and developing inherently explainable models.</p>
+            <p data-key="bio.2">During my Bachelor&#39;s studies, I was also interested in the intersection of machine learning methods and quantum computing. My Bachelor&#39;s thesis explored the application of Boltzmann Machines to boson sampling. This is the point I bacame interested in machine learning models which opened a new path in my research to explore these methods in more depth.</p>
+            <p data-key="bio.3">I have also a geniuine interest in mathematics. After all, how can you explain the nature--including artificial intelligence--without using the language of the universe. I look forward to further utilize mathematics in my research :)</p>
           </div>
         </section>
 
         <section id="publications">
-          <h1>Publications</h1>
+          <div class="section-heading"><h2>Publications</h2><a class="text-link" href="research.html">Explore research <span aria-hidden="true">↗</span></a></div>
 
           <article class="pub-card">
-            <img class="pub-thumb" src="images/DICE.png" alt="Figure illustrating the DICE method">
+            <img loading="lazy" width="170" height="135" class="pub-thumb" src="images/DICE.png" alt="Figure illustrating the DICE method">
             <div class="pub-body">
-              <h2 class="pub-title">Practical Identification of Training Datasets in Large Language Models</h2>
-              <p class="pub-authors">Nima Dindarsafa, Bihe Zhao, Piotr Trzaskowski, Filip Szympliński, Krzysztof Wodnicki, Franziska Boenisch, Adam Dziedzic</p>
+              <h3 class="pub-title">Practical Identification of Training Datasets in Large Language Models</h3>
+              <p class="pub-authors"><strong>Nima Dindarsafa</strong>, Bihe Zhao, Piotr Trzaskowski, Filip Szympliński, Krzysztof Wodnicki, Franziska Boenisch, Adam Dziedzic</p>
               <p class="pub-venue">Under Review &middot; NeurIPS 2026</p>
-              <p class="pub-description" data-key="pub.dice.description"></p>
+              <details class="pub-abstract">
+                <summary>Abstract</summary>
+                <p class="pub-description" data-key="pub.dice.description">This research aims to develop a practical black-box Dataset Inference method for determining whether an LLM was trained on a suspect dataset by estimating per-token probabilities from label-only generated outputs, avoiding the need for gray-box probability access. It also replaces rigid p-value testing with e-value–based sequential testing, enabling anytime-valid and adaptive evidence accumulation as more samples are queried. Together, these methodological advances allow dataset inference to be applied to real-world LLM APIs under fully black-box access.</p>
+              </details>
               <a class="pub-link" href="https://openreview.net/forum?id=e6UZMoywyF">Read the paper &rarr;</a>
             </div>
           </article>
 
           <article class="pub-card">
-            <img class="pub-thumb" src="images/1dCNN.jpg" alt="Figure illustrating the 1D-CNN seismic collapse prediction framework">
+            <img loading="lazy" width="170" height="135" class="pub-thumb" src="images/1dCNN.jpg" alt="Figure illustrating the 1D-CNN seismic collapse prediction framework">
             <div class="pub-body">
-              <h2 class="pub-title">A 1D-CNN deep learning framework for seismic collapse prediction of jacket offshore platforms with Bayesian neural architecture search</h2>
-              <p class="pub-authors">Mohammad Zarrin, Liborio Cavaleri, Amirhosein Rezaei, Nima Dindarsafa</p>
+              <h3 class="pub-title">A 1D-CNN deep learning framework for seismic collapse prediction of jacket offshore platforms with Bayesian neural architecture search</h3>
+              <p class="pub-authors">Mohammad Zarrin, Liborio Cavaleri, Amirhosein Rezaei, <strong>Nima Dindarsafa</strong></p>
               <p class="pub-venue">Ocean Engineering Journal &middot; 2026</p>
-              <p class="pub-description" data-key="pub.1dcnn.description"></p>
+              <details class="pub-abstract">
+                <summary>Abstract</summary>
+                <p class="pub-description" data-key="pub.1dcnn.description">This study proposes a methodology for seismic limit-state and collapse prediction of Jacket Type Offshore Platforms using a 1D-CNN trained directly on earthquake accelerogram time-series data. The study develops a systematic model-selection framework based on Bayesian optimization to tune the neural architecture and hyperparameters, reducing reliance on manual trial-and-error. It further uses nested cross-validation for unbiased performance evaluation and introduces a stochastic optimization approach for stratified K-fold dataset preparation based on incremental dynamic analysis. The optimized 1D-CNN framework is compared with tuned MLP and SVM models and applied to estimate collapse fragility curves for a case-study offshore platform.</p>
+              </details>
               <a class="pub-link" href="https://www.sciencedirect.com/science/article/abs/pii/S0029801826004592">Read the paper &rarr;</a>
             </div>
           </article>
+        </section>
+        <section class="blog-note" aria-labelledby="blog-heading">
+          <p class="eyebrow">The blog</p>
+          <h2 id="blog-heading">Somewhere that I can dump things I like :)</h2>
+          <a class="text-link" href="blog.html">Visit the blog <span aria-hidden="true">↗</span></a>
         </section>
       </div>
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Nima Dindarsafa</p>
-    </div>
-  </footer>
-  <script src="js/content.js"></script>
+  <div class="site-footer" aria-hidden="true">
+    <div class="container"></div>
+  </div>
 </body>
 </html>

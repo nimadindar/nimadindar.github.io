@@ -1,0 +1,18 @@
+{
+  "name": "nima-personal-website",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "new-post": "node scripts/new-post.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "preview": "python3 -m http.server 8000 --bind 127.0.0.1"
+  },
+  "devDependencies": {
+    "marked": "^18.0.14",
+    "yaml": "^2.9.1"
+  }
+}

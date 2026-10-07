@@ -51,9 +51,9 @@ section + section { margin-top: 4.5rem; }
 .page-layout { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: clamp(3rem, 7vw, 7rem); align-items: start; }
 .profile-panel { position: sticky; top: 3rem; }
 .profile-photo { width: 250px; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 8px; background: var(--surface); }
-.profile-name { font-family: var(--serif); line-height: 1.2; font-size: 1.55rem; letter-spacing: -0.03em; margin: 1.4rem 0 0.3rem; }
-.profile-tagline { font-size: 0.9rem; color: var(--accent); margin-bottom: 0.6rem; }
-.profile-affiliation { font-size: 0.8rem; line-height: 1.75; color: var(--muted); margin-bottom: 0; }
+.profile-name { font-family: var(--serif); line-height: 1.2; font-size: 1.6rem; letter-spacing: -0.03em; margin: 1.4rem 0 0.3rem; }
+.profile-tagline { font-size: 1rem; color: var(--accent); margin-bottom: 0.6rem; }
+.profile-affiliation { font-size: 0.95rem; line-height: 1.75; color: var(--muted); margin-bottom: 0; }
 .profile-social { display: flex; gap: 0.5rem; margin-top: 1.2rem; }
 .profile-social a { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--border); border-radius: 50%; color: var(--muted); }
 .profile-social a:hover { color: var(--accent); background: var(--surface); border-color: var(--accent); }
@@ -138,10 +138,16 @@ section + section { margin-top: 4.5rem; }
   .page-layout { grid-template-columns: 280px minmax(0, 1fr); }
   .profile-photo { width: 280px; }
 }
+/* Give tablets a full-width profile above the biography, with a substantial photo. */
+@media (max-width: 1100px) {
+  .page-layout { grid-template-columns: minmax(0, 1fr); gap: 3rem; }
+  .profile-panel { position: static; display: grid; grid-template-columns: clamp(224px, 28vw, 280px) minmax(0, 1fr); grid-template-rows: auto auto auto 1fr; column-gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+  .profile-photo { width: 100%; grid-row: 1 / 5; }
+  .profile-name { font-size: clamp(1.65rem, 3vw, 2rem); margin: 0 0 0.6rem; }
+  .profile-tagline { margin-bottom: 0.6rem; }
+  .profile-social { margin-top: 1rem; }
+}
 @media (max-width: 1000px) {
-  .page-layout { grid-template-columns: 200px minmax(0, 1fr); gap: 3rem; }
-  .profile-photo { width: 200px; }
-  .profile-name { font-size: 1.35rem; }
   .pub-card { grid-template-columns: 130px minmax(0, 1fr); gap: 1.4rem; }
   .pub-thumb { height: 110px; }
   .document-layout { grid-template-columns: 150px minmax(0, 1fr); gap: 2rem; }
@@ -151,14 +157,6 @@ section + section { margin-top: 4.5rem; }
   .site-header .container { flex-direction: column; align-items: flex-start; gap: 0.7rem; padding-block: 1.25rem 1rem; }
   .site-nav { width: 100%; justify-content: space-between; gap: 0.5rem; }
   .site-nav a { font-size: 0.82rem; }
-  .page-layout { grid-template-columns: minmax(0, 1fr); gap: 3rem; }
-  .profile-panel { position: static; display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 0 1.5rem; align-items: center; }
-  .profile-photo { width: 120px; grid-row: 1 / 5; }
-  .profile-name { margin: 0 0 0.2rem; }
-  .profile-tagline { margin: 0 0 0.2rem; font-size: 0.8rem; }
-  .profile-affiliation { font-size: 0.72rem; }
-  .profile-social { margin-top: 0.7rem; }
-  .profile-social a { width: 36px; height: 36px; }
   section + section { margin-top: 3.5rem; }
   .document-layout { display: block; }
   .section-nav { position: static; display: flex; flex-wrap: wrap; gap: 0.2rem 1.2rem; padding-bottom: 1.2rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--border); }
@@ -166,12 +164,13 @@ section + section { margin-top: 4.5rem; }
   .pub-card { grid-template-columns: 130px minmax(0, 1fr); }
   .post-preview { grid-template-columns: 1fr; gap: 0.6rem; }
 }
+/* On phones, let the photo and its text each use their own row. */
+@media (max-width: 600px) {
+  .profile-panel { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .profile-photo { width: clamp(192px, 58vw, 256px); }
+  .profile-name { font-size: 1.7rem; margin: 1.2rem 0 0.5rem; }
+}
 @media (max-width: 480px) {
-  .profile-panel { grid-template-columns: 92px minmax(0, 1fr); gap: 0 1rem; }
-  .profile-photo { width: 92px; align-self: start; }
-  .profile-name { font-size: 1.25rem; }
-  .profile-social { gap: 0.4rem; }
-  .profile-social a { width: 38px; height: 38px; }
   .pub-card { grid-template-columns: minmax(0, 1fr); gap: 1.2rem; }
   .pub-thumb { width: 160px; height: 110px; }
   .pub-title { font-size: 1.3rem; }
